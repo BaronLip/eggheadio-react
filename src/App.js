@@ -1,8 +1,24 @@
+// Importing React from the 'react' package is required for all components.
 import React from 'react';
 
-const App = () => (
-	<h1>Hello!</h1>
-)
+// A class component may contain state:
+// The render() method is required for anything to be rendered on screen.
+// JSX is used instead of standard html.
+// 'className' is JSX for 'class' in HTML because 'class' is a reserved keyword in HTML.
+// JSX uses the React.createElement('element_tag', props, 'innerHTML') to create the dom element. 
+// React.createElement('h1', null, 'Hello World!') is the equivalent of below.
+
+class App extends React.Component {
+	render() {
+		return <h1 className="">Hello World!</h1>
+		// Testing the longhand:
+		// return React.createElement('h1', null, 'Hello World!');
+	}
+}
+
+// A stateless component only returns the return block and has not state.
+// Example:
+// const App = () => <h1>Hello stateless</h1>
 
 export default App
 
