@@ -1,6 +1,7 @@
 // Importing React from the 'react' package is required for all components.
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import InputWidget from "../src/components/input";
 
 // A class component may contain state:
 // The render() method is required for anything to be rendered on screen.
@@ -43,13 +44,11 @@ class App extends React.Component {
 				<h1>{this.props.txt}</h1>
 				{/* Or, set the prop to a variable outside of the render method. */}
 				<h1>{txt}</h1>
-				<h1>{cat}</h1>
 				{/* Use State by calling this.state.keyname. */}
 				<h1>{this.state.txt}</h1>
-				
-				<input type="text" onChange={this.update.bind(this)}/>
 
-
+				{/* <input type="text" onChange={this.update.bind(this)}/> */}
+				<InputWidget update={this.update.bind(this)}/>
 			</div>
 		)
 	}
@@ -71,38 +70,9 @@ App.defaultProps = {
 	txt: "this is the default txt.",
 }
 
-
 // A stateless component only returns the return block and has not state.
 // Example:
 // const App = () => <h1>Hello stateless</h1>
 
 export default App
 
-
-// // Scaffolded code below:
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-// 	return (
-// 		<div className="App">
-// 			<header className="App-header">
-// 				<img src={logo} className="App-logo" alt="logo" />
-// 				<p>
-// 				Edit <code>src/App.js</code> and save to reload.
-// 				</p>
-// 				<a
-// 				className="App-link"
-// 				href="https://reactjs.org"
-// 				target="_blank"
-// 				rel="noopener noreferrer"
-// 				>
-// 				Learn React
-// 				</a>
-// 			</header>
-// 		</div>
-// 	);
-// }
-
-// export default App;
