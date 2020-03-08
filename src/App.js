@@ -10,7 +10,22 @@ import PropTypes from 'prop-types'
 // React.createElement('h1', null, 'Hello World!') is the equivalent of below.
 
 class App extends React.Component {
+	// Use a constructor method to utilize STATE.
+	constructor() {
+		// Super gives the component the context of 'this' component rather than the parent class of React.Component.
+		super();
+		this.state = {
+			txt: 'this is the state txt.'
+		}
+	}
+
+	// After creating State, use custom methods to .setState, or update the state.
+	update(e) {
+		this.setState({txt: e.target.value})
+	}
+
 	render() {
+
 		// React components can only return one 'node'.
 		// To compensate for this, wrap multiple nodes in a parent node.
 		// JavaScript must be placed before the return statement, or be interpolated within the return statement.
@@ -20,6 +35,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<h1 className="">Hello World!</h1>
+				{/* Testing the longhand:*/}
 				{/* return React.createElement('h1', null, 'Hello World!'); */}
 				{/* NOTE: JSX comments must be wrapped in braces. */}
 
@@ -28,8 +44,12 @@ class App extends React.Component {
 				{/* Or, set the prop to a variable outside of the render method. */}
 				<h1>{txt}</h1>
 				<h1>{cat}</h1>
+				{/* Use State by calling this.state.keyname. */}
+				<h1>{this.state.txt}</h1>
+				
+				<input type="text" onChange={this.update.bind(this)}/>
 
-				{/* Testing the longhand:*/}
+
 			</div>
 		)
 	}
