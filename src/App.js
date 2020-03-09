@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputWidget from "../src/components/input";
+import Button from "../src/components/button";
+import { Heart } from "../src/components/button";
 
 // A class component may contain state:
 // The render() method is required for anything to be rendered on screen.
@@ -32,7 +34,7 @@ class App extends React.Component {
 		// JavaScript must be placed before the return statement, or be interpolated within the return statement.
 		//  
 		let txt = this.props.txt;
-		let cat = this.props.cat;
+		// let cat = this.props.cat;
 		return (
 			<div>
 				<h1 className="">Hello World!</h1>
@@ -48,6 +50,8 @@ class App extends React.Component {
 				<h1>{this.state.txt}</h1>
 
 				{/* <input type="text" onChange={this.update.bind(this)}/> */}
+				{/* This is a nested component. The heart component is now a child of the Button component. */}
+				<Button>I <Heart/> React</Button>
 				<InputWidget update={this.update.bind(this)}/>
 			</div>
 		)
@@ -73,6 +77,6 @@ App.defaultProps = {
 // A stateless component only returns the return block and has not state.
 // Example:
 // const App = () => <h1>Hello stateless</h1>
-
+ 
 export default App
 
