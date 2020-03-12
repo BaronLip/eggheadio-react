@@ -2,8 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InputWidget from "../src/components/input";
-import Button from "../src/components/button";
-import { Heart } from "../src/components/button";
+import Button, { Heart } from "../src/components/button";
+import AddButton from "../src/components/add_button";
 
 // A class component may contain state:
 // The render() method is required for anything to be rendered on screen.
@@ -18,7 +18,8 @@ class App extends React.Component {
 		// Super gives the component the context of 'this' component rather than the parent class of React.Component.
 		super();
 		this.state = {
-			txt: 'this is the state txt.'
+			txt: 'this is the state txt.',
+			val: 1
 		}
 	}
 
@@ -27,8 +28,11 @@ class App extends React.Component {
 		this.setState({txt: e.target.value})
 	}
 
-	render() {
+	add() {
+		this.setState({val: this.state.val + 1})
+	}
 
+	render() {
 		// React components can only return one 'node'.
 		// To compensate for this, wrap multiple nodes in a parent node.
 		// JavaScript must be placed before the return statement, or be interpolated within the return statement.
@@ -52,7 +56,12 @@ class App extends React.Component {
 				{/* <input type="text" onChange={this.update.bind(this)}/> */}
 				{/* This is a nested component. The heart component is now a child of the Button component. */}
 				<Button>I <Heart/> React</Button>
+
+				{/* This is an imported component. See top for import statement. */}
+				{/* When importing stateless components, the action can be passed as a prop to the component. */}
 				<InputWidget update={this.update.bind(this)}/>
+				<br/>
+				<AddButton add={this.add.bind(this)} val={this.state.val}/>
 			</div>
 		)
 	}
