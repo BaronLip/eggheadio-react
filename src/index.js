@@ -15,7 +15,7 @@ STATE: ARE VALUES THAT ARE MEANT TO BE MANAGED AND UPDATED BY THE COMPONENT.
 */}
 
 ReactDOM.render(
-    <App txt="this is the prop 'txt'" cat={5} />,
+    <App txt="this is the prop 'txt'"/>,
     document.getElementById('root')
 );
 

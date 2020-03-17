@@ -1,3 +1,6 @@
+### React refresher files based on egghead.io course here:
+https://egghead.io/courses/start-learning-react
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

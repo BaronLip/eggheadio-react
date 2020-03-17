@@ -80,7 +80,7 @@ App.propTypes = {
 
 // Set default props by using .defaultProps.
 App.defaultProps = {
-	txt: "this is the default txt.",
+	txt: "this is the defaultProps txt.",
 }
 
 // A stateless component only returns the return block and has not state.
